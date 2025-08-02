@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope & Harmony NGO</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+        /* Custom styles for the hamburger menu */
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #4a5568;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+        /* Rotates the top bar of the hamburger to form an 'X' */
+        .hamburger-menu.open span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        /* Hides the middle bar of the hamburger */
+        .hamburger-menu.open span:nth-child(2) {
+            opacity: 0;
+        }
+        /* Rotates the bottom bar of the hamburger to form an 'X' */
+        .hamburger-menu.open span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+        Navigation Bar
+        A responsive navbar that collapses into a hamburger menu on smaller screens.
+    -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- NGO Logo and Name -->
+            <a href="#home" class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <span class="text-xl font-bold text-gray-800">Hope & Harmony</span>
+            </a>
+
+            <!-- Hamburger menu for mobile -->
+            <div class="md:hidden">
+                <button id="menu-button" class="hamburger-menu p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Main navigation links for desktop -->
+            <div id="nav-links" class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-200">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-200">About Us</a>
+                <a href="#volunteer" class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-full font-medium transition-colors duration-200 shadow-md">Volunteer</a>
+            </div>
+        </div>
+
+        <!-- Mobile navigation links (hidden by default) -->
+        <div id="mobile-nav-links" class="hidden md:hidden bg-white shadow-lg pb-4">
+            <a href="#home" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Home</a>
+            <a href="#about" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">About Us</a>
+            <a href="#volunteer" class="block px-6 py-2 text-white bg-indigo-600 hover:bg-indigo-700 mx-6 mt-2 rounded-full text-center">Volunteer</a>
+        </div>
+    </nav>
+
+    <main class="space-y-20">
+        <!--
+            Home Page Section (Hero)
+            This is the main landing area with a compelling message and call to action.
+        -->
+        <section id="home" class="bg-gray-50 py-20 md:py-32">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <!-- Text Content -->
+                <div class="flex flex-col items-start space-y-6">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                        Together, We Can Make a Difference
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600">
+                        Join our mission to create a better world by empowering communities and providing essential support to those in need.
+                    </p>
+                    <a href="#volunteer" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300">
+                        Become a Volunteer
+                    </a>
+                </div>
+                <!-- Image -->
+                <div class="mt-8 md:mt-0">
+                    <img src="https://placehold.co/600x400/222222/cccccc?text=NGO+Hero+Image" alt="People helping each other" class="rounded-3xl shadow-2xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!--
+            About Us Section
+            Provides an overview of the organization's mission, vision, and values.
+        -->
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-10">
+                    About Our Mission
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Mission Card -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-bold text-indigo-600 mb-4">Our Mission</h3>
+                        <p class="text-gray-700">
+                            To alleviate poverty and provide education, healthcare, and sustainable living solutions to underserved communities across the globe.
+                        </p>
+                    </div>
+                    <!-- Vision Card -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-bold text-indigo-600 mb-4">Our Vision</h3>
+                        <p class="text-gray-700">
+                            A world where every individual has access to the resources and opportunities they need to thrive and build a better future.
+                        </p>
+                    </div>
+                    <!-- Values Card -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-bold text-indigo-600 mb-4">Our Values</h3>
+                        <p class="text-gray-700">
+                            We are committed to integrity, compassion, and transparency in all our actions, ensuring that our impact is both profound and lasting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            Volunteer Form Section
+            A clean and simple form for potential volunteers to sign up.
+        -->
+        <section id="volunteer" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-2xl">
+                    <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+                        Join Our Team of Volunteers
+                    </h2>
+                    <form id="volunteer-form" class="space-y-6">
+                        <!-- Name Field -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200">
+                        </div>
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200">
+                        </div>
+                        <!-- Phone Field -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200">
+                        </div>
+                        <!-- Message Field -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Why do you want to volunteer?</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-200"></textarea>
+                        </div>
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                    <!-- Form Submission Message Container -->
+                    <div id="form-message" class="mt-6 hidden text-center p-4 rounded-xl text-green-700 bg-green-100 border border-green-200">
+                        Thank you for your interest! We'll be in touch soon.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--
+        Footer
+        Simple footer with copyright and social media links.
+    -->
+    <footer class="bg-gray-800 text-gray-300 py-8">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <p>&copy; 2024 Hope & Harmony. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.014 4.854.07a8.736 8.736 0 012.716.516 4.67 4.67 0 011.666 1.07 4.67 4.67 0 011.07 1.666c.23 1 .452 2.378.516 2.716.056 1.27.07 1.65.07 4.854s-.014 3.584-.07 4.854a8.736 8.736 0 01-.516 2.716 4.67 4.67 0 01-1.07 1.666 4.67 4.67 0 01-1.666 1.07c-1 .23-2.378.452-2.716.516-1.27.056-1.65.07-4.854.07s-3.584-.014-4.854-.07a8.736 8.736 0 01-2.716-.516 4.67 4.67 0 01-1.666-1.07 4.67 4.67 0 01-1.07-1.666c-.23-1-.452-2.378-.516-2.716-.056-1.27-.07-1.65-.07-4.854s.014-3.584.07-4.854a8.736 8.736 0 01.516-2.716 4.67 4.67 0 011.07-1.666 4.67 4.67 0 011.666-1.07c1-.23 2.378-.452 2.716-.516 1.27-.056 1.65-.07 4.854-.07zM12 0c-3.589 0-4.032.016-5.465.077a10.667 10.667 0 00-3.32.617A6.67 6.67 0 00.617 3.32a10.667 10.667 0 00-.617 3.32C0 7.968.016 8.411.077 12s.061 4.032.077 5.465a10.667 10.667 0 00.617 3.32 6.67 6.67 0 002.703 2.703 10.667 10.667 0 003.32.617c1.433.061 1.876.077 5.465.077s4.032-.016 5.465-.077a10.667 10.667 0 003.32-.617 6.67 6.67 0 002.703-2.703 10.667 10.667 0 00.617-3.32c.061-1.433.077-1.876.077-5.465s-.016-4.032-.077-5.465a10.667 10.667 0 00-.617-3.32A6.67 6.67 0 0020.68 0.617a10.667 10.667 0 00-3.32-.617C16.032 0 15.589.016 12 0zM12 7.21c-2.64 0-4.79 2.15-4.79 4.79s2.15 4.79 4.79 4.79 4.79-2.15 4.79-4.79S14.64 7.21 12 7.21zM12 15c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zM16.945 4.545a1.18 1.18 0 100-2.36 1.18 1.18 0 000 2.36z" />
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.258 6.012a8.7 8.7 0 01-2.585.708c.84-.504 1.488-1.296 1.795-2.247a12.18 12.18 0 01-2.884 1.107c-.792-.84-1.92-1.36-3.178-1.36-2.408 0-4.35 1.942-4.35 4.349 0 .34.038.674.113.992-3.61-.18-6.815-1.91-8.96-4.524-.374.645-.588 1.398-.588 2.197 0 1.506.764 2.836 1.924 3.61-.71-.02-1.378-.216-1.96-.54.004.018.004.036.004.054 0 2.106 1.498 3.865 3.488 4.267-.364.1-.745.153-1.14.153-.28 0-.55-.028-.813-.075.556 1.724 2.164 2.98 4.07 3.013-1.488 1.164-3.36 1.86-5.4 1.86-.35 0-.693-.02-.996-.06.75 2.37 2.052 4.108 3.596 5.176 1.918 1.282 4.184 2.028 6.622 2.028 7.94 0 12.288-6.58 12.288-12.287 0-.187-.005-.373-.012-.56.843-.607 1.57-1.364 2.146-2.222z"/>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.04c-5.46 0-9.92 4.46-9.92 9.92s4.46 9.92 9.92 9.92 9.92-4.46 9.92-9.92-4.46-9.92-9.92-9.92zm3.32 12.18h-2.14v6.86h-2.2v-6.86h-2.19v-1.84h2.19v-1.32c0-1.8 1.09-2.77 2.69-2.77 0.77 0 1.56 0.14 1.56 0.14v1.71h-0.89c-0.88 0-1.16 0.55-1.16 1.13v1.11h2.2l-0.34 1.84z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+        JavaScript for interactive elements
+    -->
+    <script>
+        // Get the hamburger menu button and the navigation links containers
+        const menuButton = document.getElementById('menu-button');
+        const navLinks = document.getElementById('nav-links');
+        const mobileNavLinks = document.getElementById('mobile-nav-links');
+        const volunteerForm = document.getElementById('volunteer-form');
+        const formMessage = document.getElementById('form-message');
+        
+        // Toggle the mobile menu on button click
+        menuButton.addEventListener('click', () => {
+            menuButton.classList.toggle('open');
+            mobileNavLinks.classList.toggle('hidden');
+        });
+
+        // Hide the mobile menu when a link is clicked
+        mobileNavLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuButton.classList.remove('open');
+                mobileNavLinks.classList.add('hidden');
+            });
+        });
+
+        // Handle the form submission
+        volunteerForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+            // In a real application, you would send this data to a server.
+            // For this assignment, we'll just show a success message.
+            console.log('Form submitted!');
+            
+            // Clear the form fields
+            volunteerForm.reset();
+            
+            // Show the success message
+            formMessage.classList.remove('hidden');
+            
+            // Optionally, hide the message after a few seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+    </script>
+
+</body>
+</html>
